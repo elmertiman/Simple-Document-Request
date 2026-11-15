@@ -1,0 +1,262 @@
+/* Admin List Styles */
+
+.sdr-admin-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+}
+
+.sdr-search-box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.sdr-search-box input[type="search"] {
+    width: 350px;
+    padding: 6px 12px;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.sdr-filter-box select {
+    padding: 6px 12px;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 150px;
+}
+
+.sdr-results-info {
+    margin: 15px 0;
+    color: #646970;
+}
+
+.sdr-results-info p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.sdr-loading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+.sdr-loading .spinner {
+    float: none;
+    margin: 0;
+}
+
+/* Table Styles */
+#sdr-requests-table {
+    margin-top: 15px;
+}
+
+#sdr-requests-table th,
+#sdr-requests-table td {
+    padding: 12px;
+}
+
+/* Sortable Columns */
+.sdr-sortable {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.sdr-sortable:hover {
+    background-color: #f0f0f1;
+}
+
+.sdr-sortable span {
+    display: inline-block;
+}
+
+.sdr-sort-indicator {
+    margin-left: 5px;
+    color: #8c8f94;
+    font-size: 12px;
+}
+
+.sdr-sortable.sorted .sdr-sort-indicator {
+    color: #2271b1;
+}
+
+.sdr-sortable.sorted.asc .sdr-sort-indicator::before {
+    content: "▲";
+}
+
+.sdr-sortable.sorted.desc .sdr-sort-indicator::before {
+    content: "▼";
+}
+
+/* Status Styles */
+.sdr-status {
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.sdr-status-verified {
+    background-color: #d4edda;
+    color: #155724 !important;
+}
+
+.sdr-status-pending {
+    background-color: #fff3cd;
+    color: #856404 !important;
+}
+
+/* No Results */
+.sdr-no-results {
+    padding: 40px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+.sdr-no-results p {
+    margin: 0;
+    color: #646970;
+    font-size: 16px;
+}
+
+.sdr-no-data,
+.sdr-loading-row,
+.sdr-error {
+    text-align: center;
+    padding: 40px !important;
+    color: #646970;
+    font-style: italic;
+}
+
+.sdr-error {
+    color: #d63638;
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* Code Styling */
+code {
+    background-color: #f6f7f7;
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 13px;
+    color: #d63638;
+}
+
+/* Bulk Actions */
+.sdr-bulk-actions {
+    margin: 15px 0;
+    padding: 12px 15px;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+}
+
+#sdr-bulk-delete-btn {
+    background-color: #d63638;
+    color: #fff !important;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+#sdr-bulk-delete-btn:hover {
+    background-color: #b32d2e;
+}
+
+#sdr-bulk-delete-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#sdr-bulk-delete-btn i {
+    margin-right: 5px;
+}
+
+/* Checkbox Column */
+.check-column {
+    width: 2.5em;
+    text-align: center;
+    padding: 11px 5px 0 8px !important;
+}
+
+.check-column input[type="checkbox"] {
+    margin: 0 5px;
+}
+
+/* Actions Column */
+.sdr-actions {
+    text-align: center;
+    white-space: nowrap;
+    width: 80px;
+}
+
+.sdr-delete-btn {
+    background-color: #d63638;
+    color: #fff !important;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+    line-height: 1;
+}
+
+.sdr-delete-btn:hover {
+    background-color: #b32d2e;
+}
+
+.sdr-delete-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.sdr-delete-btn i {
+    pointer-events: none;
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+    .sdr-admin-toolbar {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .sdr-search-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .sdr-search-box input[type="search"] {
+        width: 100%;
+    }
+    
+    .sdr-filter-box select {
+        width: 100%;
+    }
+}
+

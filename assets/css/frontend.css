@@ -1,0 +1,177 @@
+/* Modal Styles */
+.sdr-modal {
+    position: fixed;
+    z-index: 100000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.sdr-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.sdr-modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: sdrModalSlideIn 0.3s ease-out;
+    transition: all 0.3s ease;
+}
+
+/* Full screen mode for PDF viewer */
+.sdr-modal-content.sdr-fullscreen {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    animation: sdrModalExpand 0.3s ease-out;
+}
+
+@keyframes sdrModalExpand {
+    from {
+        width: 90%;
+        max-width: 600px;
+        margin: 5% auto;
+    }
+    to {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+}
+
+@keyframes sdrModalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.sdr-modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 10px 15px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.sdr-modal-close:hover,
+.sdr-modal-close:focus {
+    color: #000;
+}
+
+.sdr-modal-body {
+    padding: 30px;
+    clear: both;
+}
+
+.sdr-modal-body h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.sdr-step {
+    display: block;
+}
+
+.sdr-message {
+    padding: 12px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.sdr-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.sdr-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.sdr-request-btn {
+    background-color: #0073aa !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sdr-request-btn:hover {
+    background-color: #005a87 !important;
+}
+
+#sdr-otp-input {
+    font-family: monospace;
+    font-weight: bold;
+}
+
+#sdr-pdf-viewer {
+    border-radius: 4px;
+}
+
+/* Full screen PDF viewer */
+.sdr-fullscreen #sdr-pdf-viewer {
+    height: calc(100vh - 150px) !important;
+    border-radius: 0;
+}
+
+.sdr-fullscreen .sdr-modal-body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.sdr-fullscreen #sdr-pdf-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.sdr-fullscreen #sdr-step-pdf {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sdr-fullscreen #sdr-step-pdf h3 {
+    margin: 0 0 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sdr-modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .sdr-modal-body {
+        padding: 20px;
+    }
+}
